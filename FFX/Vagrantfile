@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+	config.vm.define "acs" do |acs|
+		acs.vm.box = "ubuntu/trusty64"
+		acs.vm.hostname = "dev"
+		acs.vm.provision "shell", path: "provision.sh"
+	end
+
+end
