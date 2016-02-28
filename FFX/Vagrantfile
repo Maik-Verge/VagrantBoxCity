@@ -6,6 +6,9 @@ Vagrant.configure(2) do |config|
 	config.vm.define "acs" do |acs|
 		acs.vm.box = "ubuntu/trusty64"
 		acs.vm.hostname = "dev"
+
+# Note, for whatever reason, changing this from 8080 to anything else caused the build to fail
+		acs.vm.network "forwarded_port", guest: 80, host: 8080, id: "nginx"
 		acs.vm.provision "shell", path: "provision.sh"
 	end
 
