@@ -8,7 +8,8 @@ Vagrant.configure(2) do |config|
 		acs.vm.hostname = "dev"
 
 # Note, for whatever reason, changing this from 8080 to anything else caused the build to fail
-		acs.vm.network "forwarded_port", guest: 80, host: 8080, id: "nginx"
+# autocorrect is supposed to adjust for taken ports, but idduno
+		acs.vm.network "forwarded_port", guest: 80, host: 8080, id: "nginx", auto_correct: true
 		acs.vm.provision "shell", path: "provision.sh"
 	end
 
