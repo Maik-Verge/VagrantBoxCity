@@ -65,6 +65,6 @@ if [[ ! -z $NODE_PACKAGES ]]; then
     npm install -g ${NODE_PACKAGES[@]}
 fi
 
-npm -v hubot &>/dev/null || { 
+hubot -v &>/dev/null || { 
 	npm i -g hubot coffee-script yo generator-hubot
 }
