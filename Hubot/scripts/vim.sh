@@ -3,7 +3,7 @@
 echo ">>> Setting up Vim"
 
 if [[ -z $1 ]]; then
-    github_url="https://raw.githubusercontent.com/fideloper/Vaprobash/master"
+    github_url="https://raw.githubusercontent.com/Maik-Verge/VagrantBoxCity/master"
 else
     github_url="$1"
 fi
@@ -16,7 +16,7 @@ git clone https://github.com/gmarik/vundle.git /home/vagrant/.vim/bundle/vundle
 sudo chown -R vagrant:vagrant /home/vagrant/.vim
 
 # Grab .vimrc and set owner
-curl --silent -L $github_url/helpers/vimrc > /home/vagrant/.vimrc
+curl --silent -L $github_url/Hubot/.vimrc > /home/vagrant/.vimrc
 sudo chown vagrant:vagrant /home/vagrant/.vimrc
 
 # Install Vundle Bundles
