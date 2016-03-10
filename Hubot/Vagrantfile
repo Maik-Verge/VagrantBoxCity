@@ -10,6 +10,9 @@ Vagrant.configure(2) do |config|
 	config.vm.define "jon" do |jon|
 		jon.vm.box = "ubuntu/trusty64"
 		jon.vm.hostname = "hubot-dev"
-		jon.vm.provision "shell", path: "provision.sh"
+		jon.vm.provision "shell", path: "scripts/provision.sh"
+		jon.vm.provision "shell", path: "scripts/node.sh"
+		jon.vm.provision "shell", path: "scripts/ansible.sh"
+		jon.vm.provision "shell", path: "scripts/vim.sh"
 	end
 end
